@@ -4,7 +4,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-
 is_harmonic = int(input("Enter 0 for a potential well or 1 for a harmonic oscillator: \n"))
 if not is_harmonic:
     well_width = float(input("Please enter width of potential well (0-10 units):  \n")) / 2
@@ -14,8 +13,6 @@ num_electron= int(input("How many electrons are present?  \n"))
 n_grid = int(input("What is the resolution of the simulation?  \n"))
 x = np.linspace(-5,5,n_grid)
 h = x[1] - x[0]
-
-t0 = perf_counter()
 
 
 # Defines the differential operator: D_ij = (del_i+1,j - del_i,j)/h
@@ -127,7 +124,6 @@ else:
     print("Diverged. Try a different setup.") # Debug
 
 print("Energy of ground state is: ", energy[0])
-print("TIME TAKEN: ", perf_counter()- t0)
 
 # Display Eigenfunctions
 for i in range(int(input("Lower eigenstate:  \n")), int(input("Higher eigenstate:  \n"))+1):
