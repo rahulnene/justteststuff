@@ -43,7 +43,7 @@ def get_nx(num_electron, psi, x):
     if num_electron % 2:
         occ_num.append(1)
 
-    # density
+    # Calculate density
     res = np.zeros_like(normed_psi[:, 0])   # Creates a zero array the size of the number of rows in the wavefunction
     for ne, psi in zip(occ_num, normed_psi.T):
         res += ne * (psi ** 2)  # Adds the charge density contribution by each eigenfunction
